@@ -1,8 +1,6 @@
 package secondTask;
 
-import java.util.ArrayList;
-
-public class HashTableArray<T> {
+public class HashTableArray {
     Entry[] arrayHash;
     int size;
 
@@ -64,6 +62,27 @@ public class HashTableArray<T> {
             currentElement = currentElement.getNext();
         }
         return value;
+    }
+
+    public StringBuilder myToString() {
+        StringBuilder res = new StringBuilder("{");
+        Entry current;
+        for (int i = 0; i < size; i++) {
+            current = arrayHash[i];
+            while (current != null) {
+                if (current.getKey() != null) {
+                    res.append(String.join("=", current.getKey(), current.getValue())).append(", ");
+                }
+                current = current.getNext();
+            }
+        }
+        if (!(res.toString().equals("{"))) {
+            int lenString = res.length();
+            res.delete(lenString - 2, lenString);
+        }
+        res.append("}");
+
+        return res;
     }
 
 

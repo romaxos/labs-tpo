@@ -1,7 +1,6 @@
 package firstTask;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -20,7 +19,7 @@ class MyFuncTest {
     }
 
     @ParameterizedTest
-    @CsvFileSource(resources = "func.csv")
+    @CsvFileSource(resources = "arcsinTest.csv")
     void usualTest(String input, String expected) {
         double inputValue = Arrays.stream(input.replaceAll(" ", "").split(";"))
                 .mapToDouble(Double::parseDouble)

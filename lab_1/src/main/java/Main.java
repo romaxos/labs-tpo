@@ -1,5 +1,8 @@
 import firstTask.MyFunc;
+import secondTask.HashTableArray;
 import thirdTask.*;
+
+import java.util.Hashtable;
 
 import static java.lang.Math.PI;
 
@@ -23,6 +26,11 @@ public class Main {
 //        god.setExists(discussion.doDiscuss(forGod, forScience));
 //
 //        god.printStatusGod();
+        HashTableArray h = new HashTableArray(10);
+//        h.put("1", "2");
+//        h.put("2", "3");
+//        h.put("4", "5");
+        System.out.println(h.myToString());
 
 
     }
