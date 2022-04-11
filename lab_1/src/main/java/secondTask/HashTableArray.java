@@ -1,5 +1,7 @@
 package secondTask;
 
+import java.util.Objects;
+
 public class HashTableArray {
     Entry[] arrayHash;
     int size;
@@ -15,7 +17,7 @@ public class HashTableArray {
 
     // функция генерации Хэша
     int GetHash(String key) {
-        return key.hashCode() % size;
+        return Math.abs(key.hashCode()) % size;
     }
 
 

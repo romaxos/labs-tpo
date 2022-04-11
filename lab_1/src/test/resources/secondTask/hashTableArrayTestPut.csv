@@ -1,0 +1,2 @@
+# inputText																						expectedText
+{ggg=2;efee=3}  ,   "{efee=2, ggg=2}"

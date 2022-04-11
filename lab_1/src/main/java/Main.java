@@ -27,9 +27,13 @@ public class Main {
 //
 //        god.printStatusGod();
         HashTableArray h = new HashTableArray(10);
-//        h.put("1", "2");
-//        h.put("2", "3");
-//        h.put("4", "5");
+        h.put("ggg", "2");
+        h.put("efee", "3");
+        h.put("e3e", "3");
+        h.put("e1e", "3");
+        h.put("fffffeee", "3");
+        h.put("efwefwe", "3");
+        h.put("yyy", "5");
         System.out.println(h.myToString());
 
 
