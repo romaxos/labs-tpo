@@ -27,21 +27,7 @@ public class Main {
 //
 //        god.printStatusGod();
         HashTableArray h = new HashTableArray(10);
-        h.put("1", "1");
-        h.put("2", "2");
-        h.put("3", "3");
-        h.put("4", "4");
-        h.put("5", "5");
-        h.put("6", "6");
-        h.put("7", "7");
-        h.put("8", "8");
-        h.put("9", "9");
-        h.put("10", "10");
-        h.remove("2");
-        h.remove("4");
-        h.remove("6");
-        h.remove("8");
-        h.remove("10");
+
 
 
 

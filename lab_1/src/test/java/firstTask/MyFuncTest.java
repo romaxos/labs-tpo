@@ -20,7 +20,7 @@ class MyFuncTest {
         this.myFunc = new MyFunc();
     }
 
-    @ParameterizedTest
+    @ParameterizedTest(name = "Arcsin general tests")
     @CsvFileSource(resources = "arcsinTest.csv")
     void usualTest(String input, String expected) {
         double inputValue = Arrays.stream(input.replaceAll(" ", "").split(";"))
@@ -34,7 +34,7 @@ class MyFuncTest {
         assertEquals(expectedValue, myResult, ACCURACY);
     }
 
-    @ParameterizedTest
+    @ParameterizedTest(name = "Arcsin exeption tests")
     @ValueSource(doubles = {1.0, -1.0, 10, -10, 10000, -10000})
     void exceptionTest(double value) {
         assertThrows(ArithmeticException.class, () -> {

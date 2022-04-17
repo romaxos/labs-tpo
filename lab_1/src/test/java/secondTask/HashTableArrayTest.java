@@ -21,7 +21,7 @@ class HashTableArrayTest {
     }
 
 
-    @ParameterizedTest
+    @ParameterizedTest(name = "Hash table put tests")
     @CsvFileSource(resources = "hashTableArrayTestPut.csv")
     void putTest(String input, String expected) {
         StringBuilder inputData = new StringBuilder(input.replaceAll(" ", ""));
@@ -38,7 +38,7 @@ class HashTableArrayTest {
     }
 
 
-    @ParameterizedTest
+    @ParameterizedTest(name = "Hash table get tests")
     @CsvFileSource(resources = "hashTableArrayTestGet.csv")
     void getTest(String fillData, String input, String expected) {
         StringBuilder fill = new StringBuilder(fillData.replaceAll(" ", ""));
@@ -60,7 +60,7 @@ class HashTableArrayTest {
         }
     }
 
-    @ParameterizedTest
+    @ParameterizedTest(name = "Hash table remove general tests")
     @CsvFileSource(resources = "hashTableArrayTestRemoveResult.csv")
     void removeTestResult(String fillData, String input, String expected) {
         StringBuilder fill = new StringBuilder(fillData.replaceAll(" ", ""));
@@ -82,7 +82,7 @@ class HashTableArrayTest {
         assertEquals(hashTableArray.myToString(), expected);
     }
 
-    @ParameterizedTest
+    @ParameterizedTest(name = "Hash table returns values tests")
     @CsvFileSource(resources = "hashTableArrayTestRemoveElement.csv")
     void removeTestElement(String fillData, String input, String expected) {
         StringBuilder fill = new StringBuilder(fillData.replaceAll(" ", ""));
