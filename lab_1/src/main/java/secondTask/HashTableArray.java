@@ -66,7 +66,7 @@ public class HashTableArray {
         return value;
     }
 
-    public StringBuilder myToString() {
+    public String myToString() {
         StringBuilder res = new StringBuilder("{");
         Entry current;
         for (int i = 0; i < size; i++) {
@@ -84,7 +84,7 @@ public class HashTableArray {
         }
         res.append("}");
 
-        return res;
+        return res.toString();
     }
 
 

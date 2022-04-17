@@ -24,11 +24,21 @@ class HashTableArrayTest {
     @ParameterizedTest
     @CsvFileSource(resources = "hashTableArrayTestPut.csv")
     void putTest(String input, String expected) {
-        String[] t = input.split(";");
-        String[] p = expected.split(";");
-
-        
+        StringBuilder inputData = new StringBuilder(input.replaceAll(" ", ""));
+        inputData.delete(0, 1);
+        inputData.delete(inputData.length()-1, inputData.length());
+        String[] p = inputData.toString().split(";");
+        for (int i = 0; i < p.length; i++) {
+            String[] keyVal = p[i].split("=");
+            hashTableArray.put(keyVal[0], keyVal[1]);
+        }
+        assertEquals(hashTableArray.myToString(), expected);
     }
+
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "hashTableArrayTestGet.csv")
+    void getTest()
 
 
 
