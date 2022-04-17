@@ -37,16 +37,14 @@ public class Main {
         h.put("8", "8");
         h.put("9", "9");
         h.put("10", "10");
-        h.put("11", "11");
-        h.put("12", "12");
-        h.put("13", "13");
-        h.put("14", "14");
-        h.put("15", "15");
-        h.put("16", "16");
-        h.put("17", "17");
-        h.put("18", "18");
-        h.put("19", "19");
-        h.put("20", "20");
+        h.remove("2");
+        h.remove("4");
+        h.remove("6");
+        h.remove("8");
+        h.remove("10");
+
+
+
         System.out.println(h.myToString());
 
 
