@@ -5,19 +5,17 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import java.util.Arrays;
-
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("HashTableArray tests")
 class HashTableArrayTest {
-    private final int size = 10;
+    private final static int SIZE = 10;
     private HashTableArray hashTableArray;
 
     @BeforeEach
     void setUp() {
-        this.hashTableArray = new HashTableArray(size);
+        this.hashTableArray = new HashTableArray(SIZE);
     }
 
 
@@ -34,7 +32,7 @@ class HashTableArrayTest {
             String[] keyVal = s.split("=");
             hashTableArray.put(keyVal[0], keyVal[1]);
         }
-        assertEquals(hashTableArray.myToString(), expected);
+        assertEquals(hashTableArray.toString(), expected);
     }
 
 
@@ -79,7 +77,7 @@ class HashTableArrayTest {
             hashTableArray.remove(s);
         }
 
-        assertEquals(hashTableArray.myToString(), expected);
+        assertEquals(hashTableArray.toString(), expected);
     }
 
     @ParameterizedTest(name = "Hash table returns values tests")

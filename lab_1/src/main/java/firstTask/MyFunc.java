@@ -6,7 +6,6 @@ import static java.lang.Math.*;
 
 public class MyFunc {
 
-    /* вычисление факториала */
     private double calculateFactorial(double n){
         double result = 1;
         for (int i = 1; i <= n; i ++){
@@ -15,7 +14,6 @@ public class MyFunc {
         return result;
     }
 
-    /* разложение функции arcsin в степенной ряд */
     public double func(double x) throws ArithmeticException{
         double result;
         if (abs(x) >= 1) {

@@ -1,36 +1,46 @@
 package thirdTask;
 
 public class Discussion {
-    Discussing peopleForGod;
-    Discussing peopleForScince;
+    private final Discussing peopleForGod;
+    private final Discussing peopleForScince;
 
-
-    public boolean doDiscuss(Discussing peopleForGod, Discussing peopleForScince) {
-        double sumVerFirst = 1;
-        double sumVerSecond = 1;
-        StringBuilder infoForGod = new StringBuilder("Исходя из невероятного совпадения такой маленькой случайности существования: ");
-        StringBuilder infoForScience = new StringBuilder("Исходя из невероятного совпадения такой маленькой случайности существования: ");
-
-        for (Proof proof: peopleForGod.getProofs()) {
-            sumVerFirst *= proof.getUncommonEssence().getProbabilityOfExistence();
-            infoForGod.append(proof.getUncommonEssence().getTitle());
-        }
-
-        for (Proof proof: peopleForScince.getProofs()) {
-            sumVerSecond *= proof.getUncommonEssence().getProbabilityOfExistence();
-            infoForScience.append(proof.getUncommonEssence().getTitle());
-
-        }
-
-        if (sumVerFirst < sumVerSecond) {
-            System.out.println(infoForGod);
-            return true;
-        } else {
-            System.out.println(infoForScience);
-            return false;
-        }
+    public Discussion(Discussing peopleForGod, Discussing peopleForScince) {
+        this.peopleForGod = peopleForGod;
+        this.peopleForScince = peopleForScince;
     }
 
 
+
+    public double calcVer(Discussing discussing, boolean onScince) {
+        double sumVerForGod = 1;
+        double sumVerNoForGod = 1;
+        for (Proof proof: discussing.getProofs()) {
+            if (proof.getForGod()) {
+                sumVerForGod *= proof.getUncommonEssence().getProbabilityOfExistence();
+            } else {
+                sumVerNoForGod *= proof.getUncommonEssence().getProbabilityOfExistence();
+            }
+        }
+        return onScince ? sumVerNoForGod : sumVerForGod;
+    }
+
+    public int calcCount(Discussing discussing, boolean onScince) {
+        int countForGod = 0;
+        int countForScince = 0;
+        for (Proof proof: discussing.getProofs()) {
+            if (proof.getForGod()) {
+                countForGod++;
+            } else {
+                countForScince++;
+            }
+        }
+        return onScince ? countForScince : countForGod;
+    }
+
+    public boolean doDiscuss(Discussing peopleForGod, Discussing peopleForScince) {
+        double resForGod = calcVer(peopleForGod, false) * calcCount(peopleForGod,false);
+        double resForScince = calcVer(peopleForScince, true) * calcCount(peopleForScince, false);
+        return resForGod <= resForScince;
+    }
 
 }

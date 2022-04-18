@@ -2,30 +2,27 @@ package thirdTask;
 
 /* неизведанная сущность */
 public class UncommonEssence {
-    private String title;
-    private double probabilityOfExistence;
+    private final String title;
+    private final double probabilityOfExistence;
+
+
 
     public UncommonEssence(String title, double probabilityOfExistence) {
         this.title = title;
-        this.probabilityOfExistence = probabilityOfExistence;
+        this.probabilityOfExistence = validateProb(probabilityOfExistence);
     }
 
-
-    public String getTitle() {
-        return title;
+    private double validateProb(double probabilityOfExistence) {
+        if (probabilityOfExistence < 0) {
+            return 0.0;
+        } else if (probabilityOfExistence > 1){
+            return 1.0;
+        }
+        return probabilityOfExistence;
     }
 
     public double getProbabilityOfExistence() {
         return probabilityOfExistence;
     }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setProbabilityOfExistence(double probabilityOfExistence) {
-        this.probabilityOfExistence = probabilityOfExistence;
-    }
-
 
 }

@@ -1,7 +1,7 @@
 package thirdTask;
 
 public class Proof {
-    private UncommonEssence uncommonEssence;
+    private final UncommonEssence uncommonEssence;
     private boolean forGod;
 
     public Proof(UncommonEssence uncommonEssence, boolean forGod) {
@@ -13,15 +13,8 @@ public class Proof {
         return uncommonEssence;
     }
 
-    public boolean getChance() {
+    public boolean getForGod() {
         return forGod;
     }
 
-    public void setUncommonEssence(UncommonEssence uncommonEssence) {
-        this.uncommonEssence = uncommonEssence;
-    }
-
-    public void setChance(boolean forGod) {
-        this.forGod = forGod;
-    }
 }

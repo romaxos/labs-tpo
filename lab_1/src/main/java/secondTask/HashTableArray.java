@@ -3,8 +3,8 @@ package secondTask;
 import java.util.Objects;
 
 public class HashTableArray {
-    Entry[] arrayHash;
-    int size;
+    private final Entry[] arrayHash;
+    private final int size;
 
     /* инициализация хэш таблицы  */
     public HashTableArray(int size) {
@@ -16,14 +16,14 @@ public class HashTableArray {
     }
 
     // функция генерации Хэша
-    int GetHash(String key) {
+    private int getHash(String key) {
         return Math.abs(key.hashCode()) % size;
     }
 
 
     // положить элемент в хэш таблицу
     public void put(String key, String value) {
-        int HashIndex = GetHash(key);
+        int HashIndex = getHash(key);
         Entry ArrayValue = arrayHash[HashIndex];
         Entry newItem = new Entry(key,value);
         newItem.setNext(ArrayValue.getNext());
@@ -34,7 +34,7 @@ public class HashTableArray {
     // получить элемент из хэш таблицы по его ключу
     public String get(String key) {
         String value = null;
-        int HashIndex = GetHash(key);
+        int HashIndex = getHash(key);
         Entry ArrayValue = arrayHash[HashIndex];
         while (ArrayValue != null) {
             if (ArrayValue.getKey() != null) {
@@ -51,7 +51,7 @@ public class HashTableArray {
     // функция удаления
     public String remove(String key) {
         String value = null;
-        int HashIndex = GetHash(key);
+        int HashIndex = getHash(key);
         Entry lastElement = arrayHash[HashIndex];
         Entry currentElement = arrayHash[HashIndex];
         while (currentElement != null) {
@@ -66,7 +66,8 @@ public class HashTableArray {
         return value;
     }
 
-    public String myToString() {
+    @Override
+    public String toString() {
         StringBuilder res = new StringBuilder("{");
         Entry current;
         for (int i = 0; i < size; i++) {
