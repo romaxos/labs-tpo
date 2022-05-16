@@ -12,11 +12,9 @@ public class UncommonEssence {
         this.probabilityOfExistence = validateProb(probabilityOfExistence);
     }
 
-    private double validateProb(double probabilityOfExistence) {
-        if (probabilityOfExistence < 0) {
-            return 0.0;
-        } else if (probabilityOfExistence > 1){
-            return 1.0;
+    public double validateProb(double probabilityOfExistence) {
+        if (probabilityOfExistence < 0 || probabilityOfExistence > 1) {
+            throw new IllegalArgumentException("probability must be between 0 and 1");
         }
         return probabilityOfExistence;
     }
