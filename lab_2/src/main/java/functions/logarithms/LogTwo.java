@@ -5,7 +5,7 @@ import functions.Func;
 import java.text.DecimalFormat;
 
 public class LogTwo extends Func {
-    private final static int BASE = 2;
+    private final static int BASIS = 2;
 
     private final Ln lnFunc;
     private final DecimalFormat df = new DecimalFormat("#.#####");
@@ -22,6 +22,6 @@ public class LogTwo extends Func {
         } else if (x == Double.POSITIVE_INFINITY) {
             return Double.POSITIVE_INFINITY;
         }
-        return Double.parseDouble(df.format(lnFunc.compute(x) / lnFunc.compute(BASE)).replace(",", "."));
+        return Double.parseDouble(df.format(lnFunc.compute(x) / lnFunc.compute(BASIS)).replace(",", "."));
     }
 }

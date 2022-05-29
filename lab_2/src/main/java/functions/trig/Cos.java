@@ -3,15 +3,15 @@ package functions.trig;
 import functions.Func;
 
 public class Cos extends Func {
-    private static final int ITERATION_NUMBER = 1000000;
+    private static final int COUNT_ITERATION = 1000000;
 
     public Cos(double accuracy) {
         super(accuracy);
     }
 
-    private long fact(int limit) {
+    private long fact(int num) {
         long result = 1;
-        for (int i = 1; i <= limit; i++) result *= i;
+        for (int i = 1; i <= num; i++) result *= i;
         return result;
     }
 
@@ -25,7 +25,7 @@ public class Cos extends Func {
         if (Double.isNaN(x)) {
             return Double.NaN;
         }
-        while (getAccuracy() <= Math.abs((sign * Math.pow(x, 2 * i)) / fact(2 * i) - prev) && i < ITERATION_NUMBER) {
+        while (getAccuracy() <= Math.abs((sign * Math.pow(x, 2 * i)) / fact(2 * i) - prev) && i < COUNT_ITERATION) {
             result += (sign * Math.pow(x, 2 * i)) / fact(2 * i);
             prev = (sign * Math.pow(x, 2 * i)) / fact(2 * i);
             sign = -sign;

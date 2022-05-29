@@ -5,8 +5,7 @@ import functions.Func;
 import java.text.DecimalFormat;
 
 public class Ln extends Func {
-    private static final int ITERATION_NUMBER = 1000000;
-    // private final DecimalFormat df = new DecimalFormat("#.#####");
+    private static final int COUNT_ITERATION = 1000000;
 
     public Ln(double accuracy) {
         super(accuracy);
@@ -29,13 +28,13 @@ public class Ln extends Func {
                 previousValue = currentValue;
                 currentValue += ((Math.pow(-1, iteration - 1) * Math.pow(x - 1, iteration)) / iteration);
                 iteration++;
-            } while (getAccuracy() <= Math.abs(currentValue - previousValue) && iteration < ITERATION_NUMBER);
+            } while (getAccuracy() <= Math.abs(currentValue - previousValue) && iteration < COUNT_ITERATION);
         } else {
             do {
                 previousValue = currentValue;
                 currentValue += ((Math.pow(-1, iteration - 1) * Math.pow(x - 1, -iteration)) / iteration);
                 iteration++;
-            } while (getAccuracy() <= Math.abs(currentValue - previousValue) && iteration < ITERATION_NUMBER);
+            } while (getAccuracy() <= Math.abs(currentValue - previousValue) && iteration < COUNT_ITERATION);
 
             currentValue += compute(x - 1);
         }

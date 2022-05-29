@@ -16,13 +16,10 @@ public class Sin extends Func {
         x -= period * Math.PI *2;
 
         int sign;
-        if(x > Math.PI && x < Math.PI * 2) {
+
+        if((x > Math.PI && x < Math.PI * 2) || (x < 0.0 && x > -Math.PI)) {
             sign = -1;
-        }
-        else if(x < 0.0 && x > -Math.PI) {
-            sign = -1;
-        }
-        else {
+        } else {
             sign = 1;
         }
 
