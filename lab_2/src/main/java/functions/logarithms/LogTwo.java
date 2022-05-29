@@ -4,13 +4,13 @@ import functions.Func;
 
 import java.text.DecimalFormat;
 
-public class Log2 extends Func {
+public class LogTwo extends Func {
     private final static int BASE = 2;
 
     private final Ln lnFunc;
     private final DecimalFormat df = new DecimalFormat("#.#####");
 
-    public Log2(double accuracy, Ln lnFunc) {
+    public LogTwo(double accuracy, Ln lnFunc) {
         super(accuracy);
         this.lnFunc = lnFunc;
     }
