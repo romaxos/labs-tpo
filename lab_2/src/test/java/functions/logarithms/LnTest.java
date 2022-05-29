@@ -16,4 +16,5 @@ public class LnTest {
         this.lnFunction = new Ln(ACCURACY);
     }
 
+
 }
