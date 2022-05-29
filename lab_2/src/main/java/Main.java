@@ -1,7 +1,7 @@
 import functions.logarithms.Ln;
 import functions.logarithms.LogTwo;
-import functions.trig.Cos;
-import functions.trig.Sin;
+import functions.trigonometry.Cos;
+import functions.trigonometry.Sin;
 
 public class Main {
     public static void main(String[] args) {

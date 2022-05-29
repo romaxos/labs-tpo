@@ -1,4 +1,4 @@
-package functions.trig;
+package functions.trigonometry;
 
 import functions.Func;
 

@@ -1,7 +1,7 @@
 package main;
 
 import functions.Func;
-import functions.trig.Sin;
+import functions.trigonometry.Sin;
 import functions.logarithms.*;
 
 public class MyApp extends Func {
