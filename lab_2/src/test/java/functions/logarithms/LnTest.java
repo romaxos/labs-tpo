@@ -2,6 +2,7 @@ package functions.logarithms;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -28,7 +29,27 @@ public class LnTest {
         assertEquals(expected, actual, DELTA);
     }
 
+    @Test
+    @DisplayName("Test negative infinity")
+    public void negativeInfinityTest() {
+        double expected = Double.NaN;
+        double actual = lnFunction.compute(Double.NEGATIVE_INFINITY);
+        assertEquals(expected, actual, DELTA);
+    }
 
+    @Test
+    @DisplayName("Test positive infinity")
+    public void positiveInfinityTest() {
+        double expected = Double.POSITIVE_INFINITY;
+        double actual = lnFunction.compute(Double.POSITIVE_INFINITY);
+        assertEquals(expected, actual, DELTA);
+    }
 
-
+    @Test
+    @DisplayName("Test nan")
+    public void nanTest() {
+        double expected = Double.NaN;
+        double actual = lnFunction.compute(Double.NaN);
+        assertEquals(expected, actual, DELTA);
+    }
 }
