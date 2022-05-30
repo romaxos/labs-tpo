@@ -8,6 +8,7 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@DisplayName("Log two tests")
 public class LogTwoTest {
 
     private static final double DELTA = 0.05;
@@ -29,7 +30,7 @@ public class LogTwoTest {
     }
 
     @Test
-    @DisplayName("Test negative infinity")
+    @DisplayName("Test log two negative infinity")
     public void negativeInfinityStubsTest() {
         double expected = Double.NaN;
         double actual = logTwoFunction.compute(Double.NEGATIVE_INFINITY);
@@ -37,7 +38,7 @@ public class LogTwoTest {
     }
 
     @Test
-    @DisplayName("Test positive infinity")
+    @DisplayName("Test log two positive infinity")
     public void positiveInfinityStubsTest() {
         double expected = Double.POSITIVE_INFINITY;
         double actual = logTwoFunction.compute(Double.POSITIVE_INFINITY);
@@ -45,7 +46,7 @@ public class LogTwoTest {
     }
 
     @Test
-    @DisplayName("Test nan")
+    @DisplayName("Test log two nan")
     public void nanStubsTest() {
         double expected = Double.NaN;
         double actual = logTwoFunction.compute(Double.NaN);

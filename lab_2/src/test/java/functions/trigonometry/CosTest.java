@@ -8,7 +8,7 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-
+@DisplayName("Cos tests")
 public class CosTest {
 
     private static final double DELTA = 0.05;
@@ -31,7 +31,7 @@ public class CosTest {
     }
 
     @Test
-    @DisplayName("Sin negative infinity test")
+    @DisplayName("Negative cos infinity test")
     public void negativeInfinityTest() {
         double expected = Double.NaN;
         double actual = cosFunction.compute(Double.NEGATIVE_INFINITY);
@@ -39,7 +39,7 @@ public class CosTest {
     }
 
     @Test
-    @DisplayName("Sin positive infinity test")
+    @DisplayName("Positive cos infinity test")
     public void positiveInfinityTest() {
         double expected = Double.NaN;
         double actual = cosFunction.compute(Double.POSITIVE_INFINITY);
@@ -47,7 +47,7 @@ public class CosTest {
     }
 
     @Test
-    @DisplayName("Sin nan test")
+    @DisplayName("Nan cos test")
     public void nanTest() {
         double expected = Double.NaN;
         double actual = cosFunction.compute(Double.NaN);

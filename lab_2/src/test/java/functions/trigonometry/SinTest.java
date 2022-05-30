@@ -8,6 +8,7 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@DisplayName("Sin tests")
 public class SinTest {
     private static final double DELTA = 0.05;
     private static final double ACCURACY = 0.001;
@@ -28,7 +29,7 @@ public class SinTest {
     }
 
     @Test
-    @DisplayName("Cos negative infinity test")
+    @DisplayName("Negative sin infinity test")
     public void negativeInfinityStubsTest() {
         double expected = Double.NaN;
         double actual = sinFunction.compute(Double.NEGATIVE_INFINITY);
@@ -36,14 +37,14 @@ public class SinTest {
     }
 
     @Test
-    @DisplayName("Cos positive infinity test")
+    @DisplayName("Positive sin infinity test")
     public void positiveInfinityStubsTest() {
         double expected = Double.NaN;
         double actual = sinFunction.compute(Double.POSITIVE_INFINITY);
         assertEquals(expected, actual, DELTA);
     }
     @Test
-    @DisplayName("Cos nan test")
+    @DisplayName("Nan sin test")
     public void nanStubsTest() {
         double expected = Double.NaN;
         double actual = sinFunction.compute(Double.NaN);

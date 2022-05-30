@@ -8,7 +8,7 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-
+@DisplayName("Ln tests")
 public class LnTest {
 
     private static final double DELTA = 0.05;
@@ -30,7 +30,7 @@ public class LnTest {
     }
 
     @Test
-    @DisplayName("Test negative infinity")
+    @DisplayName("Test ln negative infinity")
     public void negativeInfinityTest() {
         double expected = Double.NaN;
         double actual = lnFunction.compute(Double.NEGATIVE_INFINITY);
@@ -38,7 +38,7 @@ public class LnTest {
     }
 
     @Test
-    @DisplayName("Test positive infinity")
+    @DisplayName("Test ln positive infinity")
     public void positiveInfinityTest() {
         double expected = Double.POSITIVE_INFINITY;
         double actual = lnFunction.compute(Double.POSITIVE_INFINITY);
@@ -46,7 +46,7 @@ public class LnTest {
     }
 
     @Test
-    @DisplayName("Test nan")
+    @DisplayName("Test ln nan")
     public void nanTest() {
         double expected = Double.NaN;
         double actual = lnFunction.compute(Double.NaN);
