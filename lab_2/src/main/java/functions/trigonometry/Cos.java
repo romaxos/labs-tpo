@@ -25,7 +25,7 @@ public class Cos extends Func {
         if (Double.isNaN(x)) {
             return Double.NaN;
         }
-        while (getAccuracy() <= Math.abs((sign * Math.pow(x, 2 * i)) / fact(2 * i) - prev) && i < COUNT_ITERATION) {
+        while (getAccuracy() <= Math.abs((sign * Math.pow(x, 2 * i))) / Math.abs(fact(2 * i) - prev) && i < COUNT_ITERATION) {
             result += (sign * Math.pow(x, 2 * i)) / fact(2 * i);
             prev = (sign * Math.pow(x, 2 * i)) / fact(2 * i);
             sign = -sign;

@@ -30,7 +30,7 @@ public class LogFactory {
         return lnFunction;
     }
 
-    public static LogTwo getLogTwoBaseMock() {
+    public static LogTwo getLogTwoMock() {
         LogTwo logTwoFunction = mock(LogTwo.class);
 
         when(logTwoFunction.compute(Mockito.eq(1 * Math.PI / 6))).thenReturn(-0.93195);

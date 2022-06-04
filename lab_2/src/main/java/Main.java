@@ -3,26 +3,37 @@ import functions.logarithms.LogTwo;
 import functions.trigonometry.Cos;
 import functions.trigonometry.Sin;
 import main.MyApp;
+import util.CsvLogger;
 
 public class Main {
+
+    private static final double ACCURACY = 0.001;
     public static void main(String[] args) {
-        Ln test = new Ln(0.001);
-        LogTwo test2 = new LogTwo(0.001, test);
-        Cos test3 = new Cos(0.001);
-        Sin test4 = new Sin(0.001, test3);
-        MyApp myApp = new MyApp(0.001, test4, test, test2);
-        System.out.println("ans: " + myApp.compute(-1.0 * Math.PI / 4));
-        System.out.println("ans: " + myApp.compute(-1.0 * Math.PI / 2));
-        System.out.println("ans: " + myApp.compute(-3.0 * Math.PI / 4));
-        System.out.println("ans: " + myApp.compute(-1.0 * Math.PI));
-        System.out.println("ans: " + myApp.compute(-5.0 * Math.PI / 4));
-        System.out.println("ans: " + myApp.compute(-3.0 * Math.PI / 2));
-        System.out.println("ans: " + myApp.compute(0.0));
-        System.out.println("ans: " + myApp.compute(1.0 * Math.PI / 4));
-        System.out.println("ans: " + myApp.compute(1.0 * Math.PI / 2));
-        System.out.println("ans: " + myApp.compute(3.0 * Math.PI / 4));
-        System.out.println("ans: " + myApp.compute(1.0 * Math.PI));
-        System.out.println("ans: " + myApp.compute(1.0));
+        Cos cosFunction = new Cos(ACCURACY);
+        Sin sinFunction = new Sin(ACCURACY, cosFunction);
+        Ln lnFunction = new Ln(ACCURACY);
+        LogTwo logTwoFunction = new LogTwo(ACCURACY, lnFunction);
+        MyApp myApp = new MyApp(ACCURACY, sinFunction, lnFunction, logTwoFunction);
+        CsvLogger csvLogger = new CsvLogger("computer_result.csv");
+        csvLogger.log(myApp);
+        System.out.println(cosFunction.compute(0.0));
+        System.out.println(cosFunction.compute(Math.PI /4));
+        System.out.println(cosFunction.compute(Math.PI /2));
+        System.out.println(cosFunction.compute(3 * Math.PI /4));
+        System.out.println(cosFunction.compute(Math.PI));
+        System.out.println(cosFunction.compute(5*Math.PI /4));
+        System.out.println(cosFunction.compute(3 * Math.PI /2));
+        System.out.println(cosFunction.compute(7 * Math.PI /4));
+        System.out.println(cosFunction.compute(2 * Math.PI));
+        System.out.println(cosFunction.compute(-Math.PI /4));
+        System.out.println(cosFunction.compute(-Math.PI /2));
+        System.out.println(cosFunction.compute(-3 * Math.PI /4));
+        System.out.println(cosFunction.compute(-Math.PI));
+        System.out.println(cosFunction.compute(-5*Math.PI /4));
+        System.out.println(cosFunction.compute(-3 * Math.PI /2));
+        //System.out.println(cosFunction.compute(-7 * Math.PI /4));
+        System.out.println(cosFunction.compute(-2 * Math.PI));
+
 
     }
 }
