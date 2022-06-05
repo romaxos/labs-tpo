@@ -22,10 +22,6 @@ public class LogTwo extends Func {
         } else if (x == Double.POSITIVE_INFINITY) {
             return Double.POSITIVE_INFINITY;
         }
-        System.out.println("ln 1 res : " + lnFunc.compute(x));
-        System.out.println("ln 2 res : " + lnFunc.compute(BASIS));
-        System.out.println("basis res: " + BASIS);
-        System.out.println("argument res : " + x);
         return Double.parseDouble(df.format(lnFunc.compute(x) / lnFunc.compute(BASIS)).replace(",", "."));
     }
 }
