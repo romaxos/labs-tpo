@@ -18,17 +18,18 @@ public class LogFactory {
         when(lnFunction.compute(Mockito.eq(3 * Math.PI / 2))).thenReturn(1.55082);
         when(lnFunction.compute(Mockito.eq(7 * Math.PI / 4))).thenReturn(1.70376);
         when(lnFunction.compute(Mockito.eq(2 * Math.PI))).thenReturn(1.83838);
-        when(lnFunction.compute(Mockito.eq(10.0))).thenReturn(2.30307);
-        when(lnFunction.compute(Mockito.eq(100.0))).thenReturn(4.60545);
-        when(lnFunction.compute(Mockito.eq(1000.0))).thenReturn(6.90796);
+        when(lnFunction.compute(Mockito.eq(2.0))).thenReturn(0.69365);
+        when(lnFunction.compute(Mockito.eq(10.0 * Math.PI / 3.1415926))).thenReturn(2.30307);
+        when(lnFunction.compute(Mockito.eq(100.0 * Math.PI / 3.1415926))).thenReturn(4.60545);
+        when(lnFunction.compute(Mockito.eq(1000.0 * Math.PI / 3.1415926))).thenReturn(6.90796);
 
         when(lnFunction.compute(Mockito.eq(0.0))).thenReturn(Double.NaN);
         when(lnFunction.compute(Mockito.eq(-1 * Math.PI / 4))).thenReturn(Double.NaN);
         when(lnFunction.compute(Mockito.eq(-1 * Math.PI / 2))).thenReturn(Double.NaN);
         when(lnFunction.compute(Mockito.eq(-3 * Math.PI / 4))).thenReturn(Double.NaN);
-        when(lnFunction.compute(Mockito.eq(-10.0))).thenReturn(Double.NaN);
-        when(lnFunction.compute(Mockito.eq(-100.0))).thenReturn(Double.NaN);
-        when(lnFunction.compute(Mockito.eq(-1000.0))).thenReturn(Double.NaN);
+        when(lnFunction.compute(Mockito.eq(-10.0 * Math.PI / 3.1415926))).thenReturn(Double.NaN);
+        when(lnFunction.compute(Mockito.eq(-100.0 * Math.PI / 3.1415926))).thenReturn(Double.NaN);
+        when(lnFunction.compute(Mockito.eq(-1000.0 * Math.PI / 3.1415926))).thenReturn(Double.NaN);
 
         when(lnFunction.compute(Double.POSITIVE_INFINITY)).thenReturn(Double.POSITIVE_INFINITY);
         when(lnFunction.compute(Double.NEGATIVE_INFINITY)).thenReturn(Double.NaN);
