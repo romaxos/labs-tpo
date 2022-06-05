@@ -22,7 +22,7 @@ public class Cos extends Func {
 
         double result = 0, prev = 0;
         int sign = 1, i = 0;
-        if (Double.isNaN(x)) {
+        if (Double.isNaN(x) || Double.isInfinite(x)) {
             return Double.NaN;
         }
         while (getAccuracy() <= Math.abs((sign * Math.pow(x, 2 * i))) / Math.abs(fact(2 * i) - prev) && i < COUNT_ITERATION) {

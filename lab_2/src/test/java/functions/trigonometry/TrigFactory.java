@@ -39,23 +39,23 @@ public class TrigFactory {
         Cos cosFunction = mock(Cos.class);
 
         when(cosFunction.compute(Mockito.eq(0.0))).thenReturn(1.0);
-        when(cosFunction.compute(Mockito.eq(1 * Math.PI / 4))).thenReturn(0.7071067811865476);
-        when(cosFunction.compute(Mockito.eq(1 * Math.PI / 2))).thenReturn(0.5000000000000001);
-        when(cosFunction.compute(Mockito.eq(3 * Math.PI / 4))).thenReturn(-0.4999999999999998);
-        when(cosFunction.compute(Mockito.eq(1 * Math.PI))).thenReturn(-0.7071067811865475);
-        when(cosFunction.compute(Mockito.eq(5 * Math.PI / 4))).thenReturn(-0.8660254037844387);
-        when(cosFunction.compute(Mockito.eq(3 * Math.PI / 2))).thenReturn(0.0);
-        when(cosFunction.compute(Mockito.eq(7 * Math.PI / 4))).thenReturn(0.0);
-        when(cosFunction.compute(Mockito.eq(2 * Math.PI))).thenReturn(0.7071067811865476);
+        when(cosFunction.compute(Mockito.eq(1 * Math.PI / 4))).thenReturn(0.707429206709773);
+        when(cosFunction.compute(Mockito.eq(1 * Math.PI / 2))).thenReturn(-8.945229984747317E-4);
+        when(cosFunction.compute(Mockito.eq(3 * Math.PI / 4))).thenReturn(-0.7071660809820822);
+        when(cosFunction.compute(Mockito.eq(1 * Math.PI))).thenReturn(-0.9998995297042177);
+        when(cosFunction.compute(Mockito.eq(5 * Math.PI / 4))).thenReturn(-0.7072522550710206);
+        when(cosFunction.compute(Mockito.eq(3 * Math.PI / 2))).thenReturn(1.9368300065366424E-4);
+        when(cosFunction.compute(Mockito.eq(7 * Math.PI / 4))).thenReturn(0.7068614029440594);
+        when(cosFunction.compute(Mockito.eq(2 * Math.PI))).thenReturn(1.0);
 
-        when(cosFunction.compute(Mockito.eq(-Math.PI / 4))).thenReturn(-0.7071067811865475);
-        when(cosFunction.compute(Mockito.eq(-Math.PI / 2))).thenReturn(-0.7071067811865475);
-        when(cosFunction.compute(Mockito.eq(-3 * Math.PI / 4))).thenReturn(-0.7071067811865475);
-        when(cosFunction.compute(Mockito.eq(-Math.PI))).thenReturn(-0.7071067811865475);
-        when(cosFunction.compute(Mockito.eq(-5 * Math.PI / 4))).thenReturn(-0.7071067811865475);
-        when(cosFunction.compute(Mockito.eq(-3 * Math.PI / 2))).thenReturn(-0.7071067811865475);
-        when(cosFunction.compute(Mockito.eq(-7 * Math.PI / 4))).thenReturn(-0.7071067811865475);
-        when(cosFunction.compute(Mockito.eq(-2 * Math.PI))).thenReturn(-0.7071067811865475);
+        when(cosFunction.compute(Mockito.eq(-Math.PI / 4))).thenReturn(0.707429206709773);
+        when(cosFunction.compute(Mockito.eq(-Math.PI / 2))).thenReturn(-8.945229984747317E-4);
+        when(cosFunction.compute(Mockito.eq(-3 * Math.PI / 4))).thenReturn(-0.7071660809820822);
+        when(cosFunction.compute(Mockito.eq(-Math.PI))).thenReturn(-0.9998995297042177);
+        when(cosFunction.compute(Mockito.eq(-5 * Math.PI / 4))).thenReturn(-0.7072522550710206);
+        when(cosFunction.compute(Mockito.eq(-3 * Math.PI / 2))).thenReturn(1.9368300065366424E-4);
+        when(cosFunction.compute(Mockito.eq(-7 * Math.PI / 4))).thenReturn(0.7068614029440594);
+        when(cosFunction.compute(Mockito.eq(-2 * Math.PI))).thenReturn(1.0);
 
         when(cosFunction.compute(Double.POSITIVE_INFINITY)).thenReturn(Double.NaN);
         when(cosFunction.compute(Double.NEGATIVE_INFINITY)).thenReturn(Double.NaN);
