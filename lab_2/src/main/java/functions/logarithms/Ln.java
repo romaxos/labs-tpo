@@ -13,7 +13,7 @@ public class Ln extends Func {
 
     @Override
     public double compute(double x) {
-        if (Double.isNaN(x) || x < 0.0) {
+        if (Double.isNaN(x) || x <= 0.0) {
             return Double.NaN;
         } else if (x == Double.POSITIVE_INFINITY) {
             return Double.POSITIVE_INFINITY;

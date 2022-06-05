@@ -37,6 +37,7 @@ public class TrigFactory {
 
     public static Cos getCosMock() {
         Cos cosFunction = mock(Cos.class);
+
         when(cosFunction.compute(Mockito.eq(0.0))).thenReturn(1.0);
         when(cosFunction.compute(Mockito.eq(1 * Math.PI / 4))).thenReturn(0.7071067811865476);
         when(cosFunction.compute(Mockito.eq(1 * Math.PI / 2))).thenReturn(0.5000000000000001);
