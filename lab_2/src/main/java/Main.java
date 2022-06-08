@@ -3,7 +3,6 @@ import functions.logarithms.LogTwo;
 import functions.trigonometry.Cos;
 import functions.trigonometry.Sin;
 import main.MyApp;
-import util.CsvLogger;
 
 public class Main {
 
