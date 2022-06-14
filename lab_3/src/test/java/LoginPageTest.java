@@ -57,5 +57,31 @@ public class LoginPageTest {
         });
     }
 
+    @Test
+    @DisplayName("Forgot password process test")
+    public void forgotPasswordProcessTest() {
+        loginPageMap.forEach((key, loginPage) -> {
+            try {
+                TimeUnit.SECONDS.sleep(20);
+                loginPage.inputEmail("ares@god.com");
+                TimeUnit.SECONDS.sleep(1);
+                loginPage.nextButtonClick();
+                TimeUnit.SECONDS.sleep(2);
+                loginPage.forgotPasswordButtonClick();
+                TimeUnit.SECONDS.sleep(2);
+                assertEquals(loginPage.getWebDriver().getCurrentUrl(), "https://account.domaintools.com/log-in/?forgot-password");
+                loginPage.inputEmailWhenForgotPassword("kaif@kaif.kaif");
+                TimeUnit.SECONDS.sleep(2);
+                loginPage.nexButtonRecoveryPasswordButtonClick();
+                TimeUnit.SECONDS.sleep(2);
+                assertTrue(loginPage.getInfoRecoveryPassword().isDisplayed());
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+
+
 
 }

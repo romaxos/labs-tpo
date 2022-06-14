@@ -25,6 +25,18 @@ public class LoginPage {
     @FindBy(xpath = "/html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div[2]/div")
     private WebElement errorLoginMessage;
 
+    @FindBy(xpath = "/html/body/div[1]/div/div/div/div/div[2]/form/div[5]/div/div/a")
+    private WebElement forgotPasswordButton;
+
+    @FindBy(xpath = "/html/body/div[1]/div/div/div/div/div[2]/form/div[2]/div/input")
+    private WebElement inputEmailWhenForgotPasswordField;
+
+    @FindBy(xpath = "/html/body/div[1]/div/div/div/div/div[2]/form/div[1]/div")
+    private WebElement infoRecoveryPassword;
+
+    @FindBy(xpath = "/html/body/div[1]/div/div/div/div/div[2]/form/div[3]/button/span/span")
+    private WebElement nexButtonRecoveryPasswordButton;
+
     public LoginPage(WebDriver webDriver) {
         PageFactory.initElements(webDriver, this);
         this.webDriver = webDriver;
@@ -39,6 +51,10 @@ public class LoginPage {
         return errorLoginMessage;
     }
 
+    public WebElement getInfoRecoveryPassword() {
+        return infoRecoveryPassword;
+    }
+
     public void inputEmail(String email) {
         emailField.sendKeys(email);
     }
@@ -47,11 +63,23 @@ public class LoginPage {
         passwordField.sendKeys(password);
     }
 
+    public void inputEmailWhenForgotPassword(String email) {
+        inputEmailWhenForgotPasswordField.sendKeys(email);
+    }
+
     public void nextButtonClick() {
         nextButton.click();
     }
 
     public void signButtonClick() {
         signButton.click();
+    }
+
+    public void forgotPasswordButtonClick() {
+        forgotPasswordButton.click();
+    }
+
+    public void nexButtonRecoveryPasswordButtonClick() {
+        nexButtonRecoveryPasswordButton.click();
     }
 }
