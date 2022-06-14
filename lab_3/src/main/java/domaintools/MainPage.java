@@ -62,6 +62,10 @@ public class MainPage {
         this.webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
+    public WebDriver getWebDriver() {
+        return webDriver;
+    }
+
     public void researchButtonClick() {
         researchButton.click();
     }
@@ -98,9 +102,6 @@ public class MainPage {
         loginButton.click();
     }
 
-    public WebDriver getWebDriver() {
-        return webDriver;
-    }
 
 
 
