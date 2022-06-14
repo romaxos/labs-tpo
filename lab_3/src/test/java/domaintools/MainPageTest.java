@@ -45,6 +45,13 @@ public class MainPageTest {
         mainPageMap.forEach((key, mainPage) -> {
             mainPage.researchButtonClick();
             assertEquals(mainPage.getWebDriver().getCurrentUrl(), "https://research.domaintools.com/");
+            try {
+                TimeUnit.SECONDS.sleep(2);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            mainPage.inputIpAddress("main");
+
         });
     }
 
@@ -117,6 +124,25 @@ public class MainPageTest {
                 TimeUnit.SECONDS.sleep(2);
                 mainPage.apisButtonClick();
                 assertEquals(mainPage.getWebDriver().getCurrentUrl(), "https://www.domaintools.com/products/api-integration");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    @Test
+    @DisplayName("Research process test")
+    public void researchProcessTest() {
+        mainPageMap.forEach((key, mainPage) -> {
+            try {
+                mainPage.researchButtonClick();
+                assertEquals(mainPage.getWebDriver().getCurrentUrl(), "https://research.domaintools.com/");
+                TimeUnit.SECONDS.sleep(2);
+                mainPage.inputIpAddress("hello");
+                TimeUnit.SECONDS.sleep(2);
+                mainPage.goSearchButtonClick();
+                TimeUnit.SECONDS.sleep(20);
+                assertEquals(mainPage.getWebDriver().getCurrentUrl(), "https://whois.domaintools.com/hello.com");
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

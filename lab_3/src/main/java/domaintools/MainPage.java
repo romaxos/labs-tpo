@@ -56,6 +56,12 @@ public class MainPage {
     @FindBy(xpath = "/html/body/nav[2]/div/div[2]/div/ul[2]/li[2]/a")
     private WebElement loginButton;
 
+    @FindBy(xpath = "/html/body/div[1]/div/div/div/div[2]/div[2]/form/div[2]/div/div/input")
+    private WebElement ipAddressField;
+
+    @FindBy(xpath = "/html/body/div[1]/div/div/div/div[2]/div[2]/form/div[2]/button")
+    private WebElement goSearchButton;
+
     public MainPage(WebDriver webDriver) {
         PageFactory.initElements(webDriver, this);
         this.webDriver = webDriver;
@@ -100,6 +106,14 @@ public class MainPage {
 
     public void loginButtonClick() {
         loginButton.click();
+    }
+
+    public void goSearchButtonClick() {
+        goSearchButton.click();
+    }
+
+    public void inputIpAddress(String ip) {
+        ipAddressField.sendKeys(ip);
     }
 
 
