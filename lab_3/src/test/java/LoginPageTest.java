@@ -37,6 +37,21 @@ public class LoginPageTest {
     }
 
     @Test
+    @DisplayName("Registration button click test")
+    public void registrationButtonClickTest() {
+        loginPageMap.forEach((key, loadPage) -> {
+            try {
+                TimeUnit.SECONDS.sleep(20);
+                loadPage.registrationButtonClick();
+                assertEquals(loadPage.getWebDriver().getCurrentUrl(), "https://secure.domaintools.com/join/");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+
+    @Test
     @DisplayName("Login process test")
     public void loginProcessTest() {
         loginPageMap.forEach((key, loginPage) -> {

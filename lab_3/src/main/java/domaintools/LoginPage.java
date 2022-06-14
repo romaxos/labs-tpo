@@ -37,6 +37,9 @@ public class LoginPage {
     @FindBy(xpath = "/html/body/div[1]/div/div/div/div/div[2]/form/div[3]/button/span/span")
     private WebElement nexButtonRecoveryPasswordButton;
 
+    @FindBy(xpath = "/html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/a")
+    private WebElement registrationButton;
+
     public LoginPage(WebDriver webDriver) {
         PageFactory.initElements(webDriver, this);
         this.webDriver = webDriver;
@@ -81,5 +84,9 @@ public class LoginPage {
 
     public void nexButtonRecoveryPasswordButtonClick() {
         nexButtonRecoveryPasswordButton.click();
+    }
+
+    public void registrationButtonClick() {
+        registrationButton.click();
     }
 }
