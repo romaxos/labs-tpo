@@ -1,3 +1,5 @@
+package drivers;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.openqa.selenium.WebDriver;
@@ -63,7 +65,7 @@ public class BrowserDrivers {
 
     }
 
-    public HashMap getDrivers()
+    public HashMap<String, WebDriver> getDrivers()
     {
         return this.drivers;
     }

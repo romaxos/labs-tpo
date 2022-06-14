@@ -1,4 +1,6 @@
-import domaintools.MainPage;
+package domaintools;
+
+import drivers.BrowserDrivers;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
@@ -19,10 +21,10 @@ public class MainPageTest {
     public void setUp() throws IOException {
         browserDrivers = new BrowserDrivers();
         mainPageMap = new HashMap<>();
-        browserDrivers.drivers.forEach((key, driver) -> driver.get("https://www.domaintools.com/"));
-        browserDrivers.drivers.forEach((key, driver) -> driver.manage().timeouts().pageLoadTimeout(100, TimeUnit.SECONDS));
-        browserDrivers.drivers.forEach((key, driver) -> mainPageMap.put(key, new MainPage(driver)));
-        browserDrivers.drivers.forEach((key, driver) -> driver.manage().window().setSize(new Dimension(1024, 1024)));
+        browserDrivers.getDrivers().forEach((key, driver) -> driver.get("https://www.domaintools.com/"));
+        browserDrivers.getDrivers().forEach((key, driver) -> driver.manage().timeouts().pageLoadTimeout(100, TimeUnit.SECONDS));
+        browserDrivers.getDrivers().forEach((key, driver) -> mainPageMap.put(key, new MainPage(driver)));
+        browserDrivers.getDrivers().forEach((key, driver) -> driver.manage().window().setSize(new Dimension(1024, 1024)));
     }
 
 

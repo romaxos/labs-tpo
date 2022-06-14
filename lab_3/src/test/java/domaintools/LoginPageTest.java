@@ -1,5 +1,8 @@
+package domaintools;
+
 import domaintools.LoginPage;
 import domaintools.MainPage;
+import drivers.BrowserDrivers;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
@@ -19,10 +22,10 @@ public class LoginPageTest {
     public void setUp() throws IOException {
         browserDrivers = new BrowserDrivers();
         loginPageMap = new HashMap<>();
-        browserDrivers.drivers.forEach((key, driver) -> driver.get("https://account.domaintools.com/log-in/?r=http%3A/whois.domaintools.com"));
-        browserDrivers.drivers.forEach((key, driver) -> driver.manage().timeouts().pageLoadTimeout(100, TimeUnit.SECONDS));
-        browserDrivers.drivers.forEach((key, driver) -> loginPageMap.put(key, new LoginPage(driver)));
-        browserDrivers.drivers.forEach((key, driver) -> driver.manage().window().setSize(new Dimension(1024, 1024)));
+        browserDrivers.getDrivers().forEach((key, driver) -> driver.get("https://account.domaintools.com/log-in/?r=http%3A/whois.domaintools.com"));
+        browserDrivers.getDrivers().forEach((key, driver) -> driver.manage().timeouts().pageLoadTimeout(100, TimeUnit.SECONDS));
+        browserDrivers.getDrivers().forEach((key, driver) -> loginPageMap.put(key, new LoginPage(driver)));
+        browserDrivers.getDrivers().forEach((key, driver) -> driver.manage().window().setSize(new Dimension(1024, 1024)));
     }
 
     @AfterEach
