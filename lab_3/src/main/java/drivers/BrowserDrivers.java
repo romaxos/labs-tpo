@@ -20,7 +20,7 @@ public class BrowserDrivers {
     HashMap<String, WebDriver> drivers = new HashMap<>();
 
     public BrowserDrivers() throws IOException {
-        final String filePath = "C:\\Users\\asus\\Desktop\\тпо3\\labs-tpo\\lab_3\\src\\test\\Drivers.json";
+        final String filePath = "C:\\Users\\asus\\Desktop\\тпо3\\labs-tpo\\lab_3\\Drivers.json";
 
         HashMap<String,String> driverPatchs = new ObjectMapper().readValue(new String(Files.readAllBytes(Paths.get(filePath))), HashMap.class);
 
