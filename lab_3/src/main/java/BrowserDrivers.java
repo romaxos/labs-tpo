@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
+import java.util.Objects;
 
 public class BrowserDrivers {
     HashMap<String, WebDriver> drivers = new HashMap<>();
@@ -22,31 +23,31 @@ public class BrowserDrivers {
         HashMap<String,String> driverPatchs = new ObjectMapper().readValue(new String(Files.readAllBytes(Paths.get(filePath))), HashMap.class);
 
         String chromeDriver = "webdriver.chrome.driver";
-        if (driverPatchs.get("Chrome") != "") {
+        if (!Objects.equals(driverPatchs.get("Chrome"), "")) {
             System.setProperty(chromeDriver, driverPatchs.get("Chrome"));
             this.drivers.put("Chrome", new ChromeDriver());
         }
 
         String firefoxDriver = "webdriver.gecko.driver";
-        if (driverPatchs.get("Firefox") != ""){
+        if (!Objects.equals(driverPatchs.get("Firefox"), "")){
             System.setProperty(firefoxDriver, driverPatchs.get("Firefox"));
             this.drivers.put("Firefox", new FirefoxDriver());
         }
 
         String chromiumDriver = "webdriver.chromium.driver";
-        if (driverPatchs.get("Chromium") != "") {
+        if (!Objects.equals(driverPatchs.get("Chromium"), "")) {
             System.setProperty(chromiumDriver, driverPatchs.get("Chromium"));
             this.drivers.put("Chromium", new EdgeDriver());
         }
 
         String internetExplorerDriver = "webdriver.InternetExplorer.driver";
-        if (driverPatchs.get("InternetExplorer") != "") {
+        if (!Objects.equals(driverPatchs.get("InternetExplorer"), "")) {
             System.setProperty(internetExplorerDriver, driverPatchs.get("InternetExplorer"));
             this.drivers.put("InternetExplorer",new InternetExplorerDriver());
         }
 
         String operaDriver = "webdriver.opera.driver";
-        if (driverPatchs.get("Opera") != "") {
+        if (!Objects.equals(driverPatchs.get("Opera"), "")) {
             System.setProperty(operaDriver, driverPatchs.get("Opera"));
             ChromeOptions options = new ChromeOptions();
             options.setBinary("");
@@ -54,7 +55,7 @@ public class BrowserDrivers {
         }
 
         String safariDriver = "webdriver.safari.driver";
-        if (driverPatchs.get("Safari") != "") {
+        if (!Objects.equals(driverPatchs.get("Safari"), "")) {
             System.setProperty(safariDriver, driverPatchs.get("Safari"));
             this.drivers.put("Safari", new SafariDriver());
         }
