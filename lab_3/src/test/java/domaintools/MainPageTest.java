@@ -149,40 +149,4 @@ public class MainPageTest {
             }
         });
     }
-
-    @Test
-    @DisplayName("Use cases button display test")
-    public void useCasesButtonDisplayTest() {
-        mainPageMap.forEach((key, mainPage) -> assertTrue(mainPage.getUseCasesButton().isDisplayed()));
-    }
-
-    @Test
-    @DisplayName("Product button display test")
-    public void productButtonDisplayTest() {
-        mainPageMap.forEach((key, mainPage) -> assertTrue(mainPage.getProductButtonCheck().isDisplayed()));
-    }
-
-    @Test
-    @DisplayName("Integrations button display test")
-    public void integrationsButtonDisplayTest() {
-        mainPageMap.forEach((key, mainPage) -> assertTrue(mainPage.getIntegrationsButton().isDisplayed()));
-    }
-
-    @Test
-    @DisplayName("Partners button display test")
-    public void partnersButtonDisplayTest() {
-        mainPageMap.forEach((key, mainPage) -> assertTrue(mainPage.getPartnersButton().isDisplayed()));
-    }
-
-    @Test
-    @DisplayName("Resources button display test")
-    public void resourcesButtonDisplayTest() {
-        mainPageMap.forEach((key, mainPage) -> assertTrue(mainPage.getResourcesButton().isDisplayed()));
-    }
-
-    @Test
-    @DisplayName("Company button display test")
-    public void companyButtonDisplayTest() {
-        mainPageMap.forEach((key, mainPage) -> assertTrue(mainPage.getProductButtonCheck().isDisplayed()));
-    }
 }
