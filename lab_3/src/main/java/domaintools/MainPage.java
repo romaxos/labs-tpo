@@ -9,25 +9,26 @@ import java.util.concurrent.TimeUnit;
 
 public class MainPage {
 
-//    @FindBy(xpath = "/html/body/nav[2]/div/div[2]/div/ul[1]/li[1]/a")
-//    public WebElement useCasesButton;
-//
-//    @FindBy(xpath = "/html/body/nav[2]/div/div[2]/div/ul[1]/li[2]/a")
-//    public WebElement productButton;
-//
-//    @FindBy(xpath = "/html/body/nav[2]/div/div[2]/div/ul[1]/li[3]/a")
-//    public WebElement integrationsButton;
-//
-//    @FindBy(xpath = "/html/body/nav[2]/div/div[2]/div/ul[1]/li[4]/a")
-//    public WebElement partnersButton;
-//
-//    @FindBy(xpath = "/html/body/nav[2]/div/div[2]/div/ul[1]/li[5]/a")
-//    public WebElement resourcesButton;
-//
-//    @FindBy(xpath = "/html/body/nav[2]/div/div[2]/div/ul[1]/li[6]/a")
-//    public WebElement companyButton;\
-
     private final WebDriver webDriver;
+
+    @FindBy(xpath = "/html/body/nav[2]/div/div[2]/div/ul[1]/li[1]/a")
+    private WebElement useCasesButton;
+
+    @FindBy(xpath = "/html/body/nav[2]/div/div[2]/div/ul[1]/li[2]/a")
+    private WebElement productButtonCheck;
+
+    @FindBy(xpath = "/html/body/nav[2]/div/div[2]/div/ul[1]/li[3]/a")
+    private WebElement integrationsButton;
+
+    @FindBy(xpath = "/html/body/nav[2]/div/div[2]/div/ul[1]/li[4]/a")
+    private WebElement partnersButton;
+
+    @FindBy(xpath = "/html/body/nav[2]/div/div[2]/div/ul[1]/li[5]/a")
+    private WebElement resourcesButton;
+
+    @FindBy(xpath = "/html/body/nav[2]/div/div[2]/div/ul[1]/li[6]/a")
+    private WebElement companyButton;
+
 
     @FindBy(xpath = "/html/body/nav[1]/div/ul/li[2]/a")
     private WebElement researchButton;
@@ -116,7 +117,27 @@ public class MainPage {
         ipAddressField.sendKeys(ip);
     }
 
+    public WebElement getUseCasesButton() {
+        return useCasesButton;
+    }
 
+    public WebElement getProductButtonCheck() {
+        return productButtonCheck;
+    }
 
+    public WebElement getIntegrationsButton() {
+        return integrationsButton;
+    }
 
+    public WebElement getPartnersButton() {
+        return partnersButton;
+    }
+
+    public WebElement getResourcesButton() {
+        return resourcesButton;
+    }
+
+    public WebElement getCompanyButton() {
+        return companyButton;
+    }
 }

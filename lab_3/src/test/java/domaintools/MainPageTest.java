@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class MainPageTest {
 
@@ -149,53 +150,39 @@ public class MainPageTest {
         });
     }
 
+    @Test
+    @DisplayName("Use cases button display test")
+    public void useCasesButtonDisplayTest() {
+        mainPageMap.forEach((key, mainPage) -> assertTrue(mainPage.getUseCasesButton().isDisplayed()));
+    }
 
+    @Test
+    @DisplayName("Product button display test")
+    public void productButtonDisplayTest() {
+        mainPageMap.forEach((key, mainPage) -> assertTrue(mainPage.getProductButtonCheck().isDisplayed()));
+    }
 
+    @Test
+    @DisplayName("Integrations button display test")
+    public void integrationsButtonDisplayTest() {
+        mainPageMap.forEach((key, mainPage) -> assertTrue(mainPage.getIntegrationsButton().isDisplayed()));
+    }
 
+    @Test
+    @DisplayName("Partners button display test")
+    public void partnersButtonDisplayTest() {
+        mainPageMap.forEach((key, mainPage) -> assertTrue(mainPage.getPartnersButton().isDisplayed()));
+    }
 
+    @Test
+    @DisplayName("Resources button display test")
+    public void resourcesButtonDisplayTest() {
+        mainPageMap.forEach((key, mainPage) -> assertTrue(mainPage.getResourcesButton().isDisplayed()));
+    }
 
-
-
-
-//    @Test
-//    @DisplayName("Use cases button display test")
-//    public void useCasesButtonDisplayTest() {
-//        MainPageMap.forEach((key, mainPage) -> assertTrue(mainPage.useCasesButton.isDisplayed()));
-//    }
-//
-//    @Test
-//    @DisplayName("Product button display test")
-//    public void productButtonDisplayTest() {
-//        MainPageMap.forEach((key, mainPage) -> assertTrue(mainPage.productButton.isDisplayed()));
-//    }
-//
-//    @Test
-//    @DisplayName("Integrations button display test")
-//    public void integrationsButtonDisplayTest() {
-//        MainPageMap.forEach((key, mainPage) -> assertTrue(mainPage.integrationsButton.isDisplayed()));
-//    }
-//
-//    @Test
-//    @DisplayName("Partners button display test")
-//    public void partnersButtonDisplayTest() {
-//        MainPageMap.forEach((key, mainPage) -> assertTrue(mainPage.partnersButton.isDisplayed()));
-//    }
-//
-//    @Test
-//    @DisplayName("Resources button display test")
-//    public void resourcesButtonDisplayTest() {
-//        MainPageMap.forEach((key, mainPage) -> assertTrue(mainPage.resourcesButton.isDisplayed()));
-//    }
-//
-//    @Test
-//    @DisplayName("Company button display test")
-//    public void companyButtonDisplayTest() {
-//        MainPageMap.forEach((key, mainPage) -> assertTrue(mainPage.productButton.isDisplayed()));
-//    }
-
-
-//    @AfterAll
-//    public static void closeUp() {
-//        browserDrivers.closeBrowser();
-//    }
+    @Test
+    @DisplayName("Company button display test")
+    public void companyButtonDisplayTest() {
+        mainPageMap.forEach((key, mainPage) -> assertTrue(mainPage.getProductButtonCheck().isDisplayed()));
+    }
 }
